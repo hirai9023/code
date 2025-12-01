@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glint Creative Agency</title>
+
+    <style>
+
+        *,
+        *::before,
+        *::after {
+            margin: 1;
+            padding: 3;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            background: #00ff99;
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80')
+                center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* ---------------------------------------
+           ABOUT
+        ---------------------------------------- */
+
+        .about p {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        /* ---------------------------------------
+           SERVICES
+        ---------------------------------------- */
+
+        .service-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            margin-top: 40px;
+        }
+
+        .service {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+        }
+
+        /* ---------------------------------------
+           PORTFOLIO
+        ---------------------------------------- */
+
+        .portfolio-grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-top: 40px;
+        }
+
+        .portfolio-grid img {
+            border-radius: 8px;
+        }
+
+        /* ---------------------------------------
+           CONTACT
+        ---------------------------------------- */
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 14px;
+            background: #222;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        /* ---------------------------------------
+           FOOTER
+        ---------------------------------------- */
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #111;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------------------------------------
+           MOBILE MENU
+        ---------------------------------------- */
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                right: 20px;
+                top: 70px;
+                background: #000;
+                padding: 20px;
+                border-radius: 4px;
+                gap: 20px;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">GLINT</div>
+
+            <div class="nav-toggle" id="navToggle">☰</div>
+
+            <nav class="nav" id="navMenu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div>
+            <h1>We Are Creative People</h1>
+            <p>We design and build beautiful digital experiences.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Glint is a creative digital agency focused on design, branding,
+                and building web experiences that help businesses grow.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2>What We Do</h2>
+
+            <div class="service-grid">
+
+                <div class="service">
+                    <h3>Web Design</h3>
+                    <p>Beautiful websites built with modern standards.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Brand Identity</h3>
+                    <p>Logos, style guides, and everything in between.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Photography</h3>
+                    <p>Professional photography for businesses.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Marketing</h3>
+                    <p>Strategies that help your brand stand out.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio section">
+        <div class="container">
+            <h2>Our Work</h2>
+
+            <div class="portfolio-grid">
+                <img src="https://picsum.photos/600?random=1" alt="">
+                <img src="https://picsum.photos/600?random=2" alt="">
+                <img src="https://picsum.photos/600?random=3" alt="">
+                <img src="https://picsum.photos/600?random=4" alt="">
+                <img src="https://picsum.photos/600?random=5" alt="">
+                <img src="https://picsum.photos/600?random=6" alt="">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Your Message" rows="4"></textarea>
+                <button class="btn">Send Message</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2025 Glint | All Rights Reserved
+    </footer>
+
+
+    <!-- MOBILE NAV SCRIPT -->
+    <script>
+        const toggle = document.getElementById("navToggle");
+        const menu = document.getElementById("navMenu");
+
+        toggle.onclick = () => {
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        };
+    </script>
+
+</body>
+</html>
